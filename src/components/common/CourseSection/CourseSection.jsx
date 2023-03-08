@@ -54,6 +54,12 @@ const S = {
     container: styled.div`
         background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
         padding-bottom: 8rem;
+        @media only screen and (min-width: 800px) {
+            margin-top: 11rem;
+        }
+        @media only screen and (min-width: 1440px) {
+            margin-top: 44rem;
+        }
     `,
     innerContainer: styled.div`
         max-width: 90%;

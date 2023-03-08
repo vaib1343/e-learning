@@ -13,13 +13,7 @@ const DetailSection = () => {
                 </p>
                 <Button variant="gradient">Get Started</Button>
             </S.detailContainer>
-            <S.imageContainer>
-                <img
-                    aria-hidden
-                    src="/assets/images/image-hero-mobile.png"
-                    alt="logo image"
-                />
-            </S.imageContainer>
+            <S.imageContainer></S.imageContainer>
         </S.container>
     );
 };
@@ -29,17 +23,33 @@ const S = {
         max-width: 90%;
         margin: auto;
         margin-top: 3.8rem;
-        display: flex;
-        justify-content: space-around;
-        flex-basis: .8 .8;
-        align-items: center;
-        flex-direction: column;
+
+
         @media only screen and (min-width: 800px) {
-            flex-direction: row;
+            max-width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media only screen and (min-width: 1440px) {
+            max-width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
         }
     `,
     detailContainer: styled.div`
-        width: 100%;
+        max-width: 100%;
+        margin-bottom: 4.6rem;
+        @media only screen and (min-width: 800px) {
+            max-width: 39.8rem;
+        }
+        @media only screen and (min-width: 1440px) {
+            max-width: 45.7rem;
+
+        }
         h1 {
             font-size: 4rem;
             line-height: 4rem;
@@ -57,12 +67,35 @@ const S = {
     `,
 
     imageContainer: styled.div`
-        width: 100%;
-        img {
-            width: 150%;
-            @media only screen and (min-width: 800px) {
-                content: url("/assets/images/image-hero-tablet@2x.png");
-            }
+        background-image: url("/assets/images/image-hero-mobile.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        position: static;
+        width: auto;
+        height: 38rem;
+        margin-top: 6.1rem;
+
+        @media only screen and (min-width: 800px) {
+            background-image: url("/assets/images/image-hero-tablet.png");
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            width: 64rem;
+            height: 64rem;
+            top: -16rem;
+            right: -27rem;
+        }
+
+        @media only screen and (min-width: 800px) {
+            background-image: url("/assets/images/image-hero-desktop.png");
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            width: 99.1rem;
+            height: 93.6rem;
+            top: -27rem;
+            right: -30.5rem;
         }
     `,
 };
